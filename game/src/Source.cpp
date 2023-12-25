@@ -1,5 +1,4 @@
-//#include <glad/glad.h>
-//#include <GLFW/glfw3.h>
+#include "/OpenGL/game/include/Game.h"
 #include "/OpenGL/common/include/GameWindow.h"
 
 #include <iostream>
@@ -9,8 +8,7 @@ int main();
 void processInput(GLFWwindow* window);
 
 // settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+
 
 int main()
 {
