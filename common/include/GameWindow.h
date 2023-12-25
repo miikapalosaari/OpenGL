@@ -1,11 +1,14 @@
 #pragma once
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <iostream>
+
 class GameWindow
 {
 public:
 	GameWindow(unsigned int width, unsigned int height);
-	bool InitOpenGLWindow(GLFWwindow*& window);
+	bool InitOpenGLWindow(GLFWwindow*& window,
+		                  std::string windowTitle);
 	bool loadOpenGlFungtionParamete();
 	void setWidth(const unsigned int _SCR_WIDTH);
 	void setHeight(const unsigned int _SCR_HEIGHT);

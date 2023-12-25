@@ -9,7 +9,8 @@ GameWindow::GameWindow(unsigned int width, unsigned int height)
     setHeight(height);
 }
 
-bool GameWindow::InitOpenGLWindow(GLFWwindow*& window)
+bool GameWindow::InitOpenGLWindow(GLFWwindow*& window,
+                                  std::string windowTitle)
 {
     bool retFlag = true;
     // glfw: initialize and configure
@@ -25,7 +26,7 @@ bool GameWindow::InitOpenGLWindow(GLFWwindow*& window)
 
     // glfw window creation
     // --------------------
-    window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, windowTitle.c_str(), NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
