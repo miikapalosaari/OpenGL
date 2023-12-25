@@ -28,7 +28,7 @@
     <ClCompile Include="..\..\opengl_lib\glad.c">
       <Filter>OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="game\src\Source.cpp">
+    <ClCompile Include="game\src\GameMain.cpp">
       <Filter>OpenGL\game\src</Filter>
     </ClCompile>
     <ClCompile Include="common\src\Common.cpp">

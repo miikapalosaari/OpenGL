@@ -150,7 +150,7 @@
     <ClCompile Include="..\..\opengl_lib\glad.c" />
     <ClCompile Include="common\src\Common.cpp" />
     <ClCompile Include="common\src\GameWindow.cpp" />
-    <ClCompile Include="game\src\Source.cpp" />
+    <ClCompile Include="game\src\GameMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\include\Common.h" />
