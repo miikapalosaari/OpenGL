@@ -1,12 +1,12 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+//#include <glad/glad.h>
+//#include <GLFW/glfw3.h>
+#include "/OpenGL/common/include/GameWindow.h"
 
 #include <iostream>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+int main();
 void processInput(GLFWwindow* window);
-
-bool InitOpenGLWindow(GLFWwindow*& window);
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -15,8 +15,12 @@ const unsigned int SCR_HEIGHT = 600;
 int main()
 {
     GLFWwindow* window = NULL;
-    if (!InitOpenGLWindow(window))
+    GameWindow w(SCR_WIDTH,SCR_HEIGHT);
+    if (!w.InitOpenGLWindow(window) &&
+        window != NULL &&
+        !w.loadOpenGlFungtionParamete())
     {
+        glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
         // render loop
         // -----------
         while (!glfwWindowShouldClose(window))
@@ -44,42 +48,6 @@ int main()
 
 }
 
-bool InitOpenGLWindow(GLFWwindow*& window)
-{
-    bool retFlag = true;
-    // glfw: initialize and configure
-    // ------------------------------
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-#ifdef __APPLE__
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-#endif
-
-    // glfw window creation
-    // --------------------
-    window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
-    if (window == NULL)
-    {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return -1;
-    }
-    glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
-    // glad: load all OpenGL function pointers
-    // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
-    retFlag = false;
-    return retFlag;
-}
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
@@ -91,6 +59,7 @@ void processInput(GLFWwindow* window)
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     // make sure the viewport matches the new window dimensions; note that width and 
