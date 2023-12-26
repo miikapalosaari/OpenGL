@@ -37,6 +37,9 @@
     <ClCompile Include="common\src\GameWindow.cpp">
       <Filter>OpenGL\common\src</Filter>
     </ClCompile>
+    <ClCompile Include="common\src\Backround.cpp">
+      <Filter>OpenGL\common\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\include\Game.h">
@@ -46,6 +49,12 @@
       <Filter>OpenGL\common\include</Filter>
     </ClInclude>
     <ClInclude Include="common\include\GameWindow.h">
+      <Filter>OpenGL\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common\include\Backround.h">
+      <Filter>OpenGL\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common\include\VertexBufferData.h">
       <Filter>OpenGL\common\include</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,9 @@
 #include "/OpenGL/game/include/Game.h"
 #include <iostream>
-
+#include "/OpenGL/common/include/VertexBufferData.h"
+#include "/OpenGL/common/include/Backround.h"
 int main();
+
 void createAndSeyVertexArrayObj(GLuint& VertexArrayID);
 void processInput(GLFWwindow* window);
 
@@ -22,22 +24,15 @@ int main()
         GLuint VertexArrayID;
         createAndSeyVertexArrayObj(VertexArrayID);
 
-        // An array of 3 vectors which represents 3 vertices
-        static const GLfloat g_vertex_buffer_data[] = {
-           -1.0f, -1.0f, 0.0f,
-           1.0f, -1.0f, 0.0f,
-           0.0f,  1.0f, 0.0f,
-        };
+        // An array of 3 vectors which represents 3 vertices'
+        //ckround a;
+        
 
         // This will identify our vertex buffer
         GLuint vertexbuffer;
-        // Generate 1 buffer, put the resulting identifier in vertexbuffer
-        glGenBuffers(1, &vertexbuffer);
-        // The following commands will talk about our 'vertexbuffer' buffer
-        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-        // Give our verticesto OpenGL.
-        glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
-		GLuint programID = w.LoadShaders("SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader");
+        InitalVertexBuffer(vertexbuffer, w);
+
+        GLuint programID = w.LoadShaders("SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader");
         // render loop
         // -----------
         while (!glfwWindowShouldClose(window))
@@ -83,6 +78,7 @@ int main()
     return 0;
 
 }
+
 
 void createAndSeyVertexArrayObj(GLuint& VertexArrayID)
 {

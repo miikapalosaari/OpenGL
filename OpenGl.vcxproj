@@ -148,13 +148,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\opengl_lib\glad.c" />
+    <ClCompile Include="common\src\Backround.cpp" />
     <ClCompile Include="common\src\Common.cpp" />
     <ClCompile Include="common\src\GameWindow.cpp" />
     <ClCompile Include="game\src\GameMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common\include\Backround.h" />
     <ClInclude Include="common\include\Common.h" />
     <ClInclude Include="common\include\GameWindow.h" />
+    <ClInclude Include="common\include\VertexBufferData.h" />
     <ClInclude Include="game\include\Game.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
