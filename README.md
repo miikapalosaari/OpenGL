@@ -5,7 +5,7 @@ Downdload GLFW's Source package [here](https://www.glfw.org/download.html)
 
 Unzip the file:
 
-(1)
+![Alt text](https://github.com/miikapalosaari/OpenGL/blob/master/Docs/1.png)
 
 Create "build" folder to the unzipped folder.
 
@@ -15,12 +15,12 @@ Generating GLFW solution with CMake
 
 Downdload CMake [here](https://cmake.org/download/)
 
-(2)
+![Alt text](https://github.com/miikapalosaari/OpenGL/blob/master/Docs/2.png)
 
 1. Browse for the source code. 
 2. Browse for the build folder. 
 
-(3)
+![Alt text](https://github.com/miikapalosaari/OpenGL/blob/master/Docs/3.png)
 
 Press configure button below.
 
@@ -36,7 +36,7 @@ Now when you go to the build folder, you can find GLFW.sln file which you can op
 Creating glfw3.lib
 -
 
-(4)
+![Alt text](https://github.com/miikapalosaari/OpenGL/blob/master/Docs/4.png)
 
 Select "Release" and "x64" then build the solution.
 
@@ -53,7 +53,7 @@ Setting up glad
 
 Download glad for opengl [here](https://glad.dav1d.de/)
 
-(5)
+![Alt text](https://github.com/miikapalosaari/OpenGL/blob/master/Docs/5.png)
 
 1. Set language to C/C++
 2. Set specification to OpenGL
@@ -74,7 +74,7 @@ Create or open visual studio project.
 
 Go to Project -> Properties -> VC++ Directories:
 
-(6)
+![Alt text](https://github.com/miikapalosaari/OpenGL/blob/master/Docs/6.png)
 
 In both "Include directories" and "Library directories" select path c/opengl_lib.
 
