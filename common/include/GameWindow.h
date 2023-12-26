@@ -12,6 +12,7 @@ public:
 	bool loadOpenGlFungtionParamete();
 	void setWidth(const unsigned int _SCR_WIDTH);
 	void setHeight(const unsigned int _SCR_HEIGHT);
+	GLuint LoadShaders(const char* vertex_file_path, const char* fragment_file_path);
 	
 private:
 	unsigned int SCR_WIDTH = 800;
